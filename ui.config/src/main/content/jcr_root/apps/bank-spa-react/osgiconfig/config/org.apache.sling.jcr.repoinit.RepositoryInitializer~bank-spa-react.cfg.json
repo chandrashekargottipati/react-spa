@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/bank-spa-react",
+        "create path (nt:unstructured) /content/dam/bank-spa-react/jcr:content",
+        "set properties on /content/dam/bank-spa-react/jcr:content\n  set cq:conf{String} to /conf/bank-spa-react\n  set jcr:title{String} to \"Bank SPA React\"\nend"
+    ]
+}

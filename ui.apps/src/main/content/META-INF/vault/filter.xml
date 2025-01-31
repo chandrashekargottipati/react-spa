@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/bank-spa-react/clientlibs"/>
+    <filter root="/apps/bank-spa-react/components"/>
+    <filter root="/apps/bank-spa-react/i18n"/>
+    <filter root="/apps/sling" />
+</workspaceFilter>
