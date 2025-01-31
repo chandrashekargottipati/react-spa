@@ -13,12 +13,28 @@ import './components/import-components';
 import './index.css';
 
 const modelManagerOptions = {};
-if(process.env.REACT_APP_PROXY_ENABLED) {
+if (process.env.REACT_APP_PROXY_ENABLED) {
     modelManagerOptions.modelClient = new LocalDevModelClient(process.env.REACT_APP_API_HOST);
 }
 
 const renderApp = () => {
-    ModelManager.initialize(modelManagerOptions).then(pageModel => {
+    // ModelManager.initialize(modelManagerOptions).then(pageModel => {
+    //     const history = createBrowserHistory();
+    //     render(
+    //         <Router history={history}>
+    //             <App
+    //                 history={history}
+    //                 cqChildren={pageModel[Constants.CHILDREN_PROP]}
+    //                 cqItems={pageModel[Constants.ITEMS_PROP]}
+    //                 cqItemsOrder={pageModel[Constants.ITEMS_ORDER_PROP]}
+    //                 cqPath={pageModel[Constants.PATH_PROP]}
+    //                 locationPathname={window.location.pathname}
+    //             />
+    //         </Router>,
+    //         document.getElementById('spa-root')
+    //     );
+    // });
+    ModelManager.initialize().then(pageModel => {
         const history = createBrowserHistory();
         render(
             <Router history={history}>
