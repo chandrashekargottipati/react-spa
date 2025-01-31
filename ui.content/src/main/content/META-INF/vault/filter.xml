@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/bank-spa-react" mode="merge"/>
+    <filter root="/content/bank-spa-react" mode="merge"/>
+    <filter root="/content/dam/bank-spa-react" mode="merge">
+        <exclude pattern="/content/dam/bank-spa-react(/.*)?"/>
+        <include pattern="/content/dam/bank-spa-react/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/bank-spa-react/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/bank-spa-react" mode="merge"/>
+</workspaceFilter>
