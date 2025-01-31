@@ -1,15 +1,36 @@
 //Header.js
 import React, { Component } from 'react';
+import { MapTo } from '@adobe/aem-react-editable-components';
+import './Header.css';
 
-export default class Header extends Component {
+export const ImageEditConfig = {
+
+          emptyLabel: 'Image',
+
+          isEmpty: function (props) {
+                    return !props || !props.src || props.src.trim().length < 1;
+          }
+};
+
+export default class Image extends Component {
+
+          get content() {
+                    return <img className="Image-src"
+                              src={this.props.src}
+                              alt={this.props.alt}
+                              title={this.props.title ? this.props.title : this.props.alt} />;
+          }
 
           render() {
+                    if (ImageEditConfig.isEmpty(this.props)) {
+                              return null;
+                    }
+
                     return (
-                              <header className="Header">
-                                        <div className="Header-container">
-                                                  <h1>Header</h1>
-                                        </div>
-                              </header>
+                              <div className="Image">
+                                        {this.content}
+                              </div>
                     );
           }
 }
+MapTo('bank-spa-react/components/image')(Image, ImageEditConfig);

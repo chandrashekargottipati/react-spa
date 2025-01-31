@@ -18,6 +18,7 @@ import withAsyncImport from "../utils/withAsyncImport";
 import './Page/Page';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
+import './Header/Header'
 
 import { MapTo } from '@adobe/aem-react-editable-components';
 
@@ -61,7 +62,7 @@ MapTo('bank-spa-react/components/separator')(SeparatorV1, { isEmpty: SeparatorV1
 
 MapTo('bank-spa-react/components/button')(ButtonV1, { isEmpty: ButtonV1IsEmptyFn });
 MapTo('bank-spa-react/components/teaser')(TeaserV1, { isEmpty: TeaserV1IsEmptyFn });
-MapTo('bank-spa-react/components/image')(ImageV2, { isEmpty: ImageV2IsEmptyFn });
+// MapTo('bank-spa-react/components/image')(ImageV2, { isEmpty: ImageV2IsEmptyFn });
 MapTo('bank-spa-react/components/title')(TitleV2, { isEmpty: TitleV2IsEmptyFn });
 
 
