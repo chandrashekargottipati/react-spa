@@ -36,7 +36,8 @@
         "bank-spa-react/components/search",
         "wcm/foundation/components/responsivegrid",
         "nt:resource",
-        "bank-spa-react/components/text"
+        "bank-spa-react/components/text",
+        "bank-spa-react/components/image"
       ],
       "brandSlug": "",
       "htmlPageItems": [],
@@ -46,9 +47,14 @@
         "root": {
           "columnCount": 12,
           "columnClassNames": {
+            "image_1204310579": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+            "image": "aem-GridColumn aem-GridColumn--default--12",
             "experiencefragment-header": "aem-GridColumn aem-GridColumn--default--12",
+            "image_215551113": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none",
+            "text": "aem-GridColumn aem-GridColumn--default--12",
             "responsivegrid": "aem-GridColumn aem-GridColumn--default--12",
-            "experiencefragment-footer": "aem-GridColumn aem-GridColumn--default--12"
+            "experiencefragment-footer": "aem-GridColumn aem-GridColumn--default--12",
+            "image_1415497056": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--offset--default--0 aem-GridColumn--default--none"
           },
           "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
           "allowedComponents": {
@@ -405,6 +411,99 @@
               ":itemsOrder": ["root"],
               "classNames": "aem-xf"
             },
+            "image": {
+              "id": "image-b197c696ef",
+              "src": "/content/bank-spa-react/us/en/home.coreimg.jpeg/structure/jcr%3acontent/root/image/1738314361455/asset.jpeg",
+              "uuid": "b73e62f3-5e21-49c8-bf11-64e2d142a22d",
+              "sizes": "",
+              "lazyEnabled": true,
+              "dataLayer": {
+                "image-b197c696ef": {
+                  "@type": "bank-spa-react/components/image",
+                  "repo:modifyDate": "2025-01-31T09:06:01Z",
+                  "image": {
+                    "repo:id": "b73e62f3-5e21-49c8-bf11-64e2d142a22d",
+                    "repo:modifyDate": "2025-01-31T01:31:42Z",
+                    "@type": "image/jpeg",
+                    "repo:path": "/content/dam/bank-spa-react/asset.jpg"
+                  }
+                }
+              },
+              ":type": "bank-spa-react/components/image"
+            },
+            "text": {
+              "id": "text-3087be09e8",
+              "text": "<p>Hello world upadated text&nbsp;</p>\r\n<p>text is updated</p>\r\n",
+              "richText": true,
+              ":type": "bank-spa-react/components/text",
+              "dataLayer": {
+                "text-3087be09e8": {
+                  "@type": "bank-spa-react/components/text",
+                  "repo:modifyDate": "2025-01-31T09:06:30Z",
+                  "xdm:text": "<p>Hello world upadated text&nbsp;</p>\r\n<p>text is updated</p>\r\n"
+                }
+              }
+            },
+            "image_1204310579": {
+              "id": "image-29bf0873f1",
+              "src": "/content/bank-spa-react/us/en/home.coreimg.jpeg/structure/jcr%3acontent/root/image_1204310579/1738314728523/pexels-ekoagalarov-29946756.jpeg",
+              "uuid": "b71c2c48-bccd-4533-8b77-4d9a9410e6ba",
+              "sizes": "",
+              "lazyEnabled": true,
+              "dataLayer": {
+                "image-29bf0873f1": {
+                  "@type": "bank-spa-react/components/image",
+                  "repo:modifyDate": "2025-01-31T09:12:08Z",
+                  "image": {
+                    "repo:id": "b71c2c48-bccd-4533-8b77-4d9a9410e6ba",
+                    "repo:modifyDate": "2025-01-31T09:10:59Z",
+                    "@type": "image/jpeg",
+                    "repo:path": "/content/dam/bank-spa-react/pexels-ekoagalarov-29946756.jpg"
+                  }
+                }
+              },
+              ":type": "bank-spa-react/components/image"
+            },
+            "image_1415497056": {
+              "id": "image-24bd00ef1c",
+              "src": "/content/bank-spa-react/us/en/home.coreimg.jpeg/structure/jcr%3acontent/root/image_1415497056/1738314747761/pexels-thanh-lam-822158566-19377629.jpeg",
+              "uuid": "8db561e5-5c28-4f1b-9a2d-31ff4bea7b96",
+              "sizes": "",
+              "lazyEnabled": true,
+              "dataLayer": {
+                "image-24bd00ef1c": {
+                  "@type": "bank-spa-react/components/image",
+                  "repo:modifyDate": "2025-01-31T09:12:27Z",
+                  "image": {
+                    "repo:id": "8db561e5-5c28-4f1b-9a2d-31ff4bea7b96",
+                    "repo:modifyDate": "2025-01-31T09:10:48Z",
+                    "@type": "image/jpeg",
+                    "repo:path": "/content/dam/bank-spa-react/pexels-thanh-lam-822158566-19377629.jpg"
+                  }
+                }
+              },
+              ":type": "bank-spa-react/components/image"
+            },
+            "image_215551113": {
+              "id": "image-a4327c6c7f",
+              "src": "/content/bank-spa-react/us/en/home.coreimg.jpeg/structure/jcr%3acontent/root/image_215551113/1738314769508/hassaan-here-o8s-2-peisg-unsplash.jpeg",
+              "uuid": "96dbb0f9-0c29-433d-96f7-f39afe0e0f1b",
+              "sizes": "",
+              "lazyEnabled": true,
+              "dataLayer": {
+                "image-a4327c6c7f": {
+                  "@type": "bank-spa-react/components/image",
+                  "repo:modifyDate": "2025-01-31T09:12:49Z",
+                  "image": {
+                    "repo:id": "96dbb0f9-0c29-433d-96f7-f39afe0e0f1b",
+                    "repo:modifyDate": "2025-01-31T09:10:23Z",
+                    "@type": "image/jpeg",
+                    "repo:path": "/content/dam/bank-spa-react/hassaan-here-O8s_2_pEISg-unsplash.jpg"
+                  }
+                }
+              },
+              ":type": "bank-spa-react/components/image"
+            },
             "responsivegrid": {
               "columnCount": 12,
               "columnClassNames": {
@@ -503,7 +602,7 @@
               ":items": {
                 "text": {
                   "id": "text-bc2ece1b7a",
-                  "text": "<p>Hi welocme to react course</p>\r\n",
+                  "text": "<p>Hello world  welocme to react course</p>\r\n",
                   "richText": true,
                   ":type": "bank-spa-react/components/text",
                   "dataLayer": {
@@ -656,6 +755,11 @@
           },
           ":itemsOrder": [
             "experiencefragment-header",
+            "image",
+            "text",
+            "image_1204310579",
+            "image_1415497056",
+            "image_215551113",
             "responsivegrid",
             "experiencefragment-footer"
           ],

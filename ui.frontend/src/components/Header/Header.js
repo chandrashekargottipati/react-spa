@@ -1,36 +1,19 @@
 //Header.js
 import React, { Component } from 'react';
-import { MapTo } from '@adobe/aem-react-editable-components';
-import './Header.css';
+import { Link } from 'react-router-dom';
+require('./Header.css');
 
-export const ImageEditConfig = {
-
-          emptyLabel: 'Image',
-
-          isEmpty: function (props) {
-                    return !props || !props.src || props.src.trim().length < 1;
-          }
-};
-
-export default class Image extends Component {
-
-          get content() {
-                    return <img className="Image-src"
-                              src={this.props.src}
-                              alt={this.props.alt}
-                              title={this.props.title ? this.props.title : this.props.alt} />;
-          }
+export default class Header extends Component {
 
           render() {
-                    if (ImageEditConfig.isEmpty(this.props)) {
-                              return null;
-                    }
-
                     return (
-                              <div className="Image">
-                                        {this.content}
-                              </div>
+                              <header className="Header">
+                                        <div className="Header-container">
+                                                  <Link to="/content/bank-spa-react/us/en/home.html">
+                                                            <h1>WKND</h1>
+                                                  </Link>
+                                        </div>
+                              </header>
                     );
           }
 }
-MapTo('bank-spa-react/components/image')(Image, ImageEditConfig);

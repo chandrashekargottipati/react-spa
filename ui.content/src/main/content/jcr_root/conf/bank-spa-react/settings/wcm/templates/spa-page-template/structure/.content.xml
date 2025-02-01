@@ -1,33 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2025-02-01T09:03:53.121+05:30"
+        cq:lastModifiedBy="admin"
         cq:template="/conf/bank-spa-react/settings/wcm/templates/spa-page-template"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bank-spa-react/components/page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
-            <experiencefragment-header
+            <!-- Image Component 1 -->
+            <image
+                jcr:created="{Date}2025-01-31T14:35:57.087+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-01-31T14:36:01.455+05:30"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bank-spa-react/components/experiencefragment"
-                                fragmentVariationPath="/content/experience-fragments/bank-spa-react/us/en/site/header/master"/>
-                
+                sling:resourceType="core/wcm/components/image/v2/image"
+                fileReference="/content/dam/bank-spa-react/asset.jpg"
+                imageFromPageImage="false">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="4"/>
+                </cq:responsive>
+            </image>
 
-            <responsivegrid
+            <!-- Image Component 2 -->
+            <image_1204310579
+                jcr:created="{Date}2025-01-31T14:36:43.982+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-01-31T14:42:08.523+05:30"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/foundation/components/responsivegrid"
-                editable="{Boolean}true">
-                <cq:responsive jcr:primaryType="nt:unstructured"/>
-            </responsivegrid>
+                sling:resourceType="core/wcm/components/image/v2/image"
+                fileReference="/content/dam/bank-spa-react/pexels-ekoagalarov-29946756.jpg"
+                imageFromPageImage="false">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="4"/>
+                </cq:responsive>
+            </image_1204310579>
 
+            <!-- Image Component 3 -->
+            <image_1415497056
+                jcr:created="{Date}2025-01-31T14:36:50.684+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-01-31T14:42:27.761+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="core/wcm/components/image/v2/image"
+                fileReference="/content/dam/bank-spa-react/pexels-thanh-lam-822158566-19377629.jpg"
+                imageFromPageImage="false">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="4"/>
+                </cq:responsive>
+            </image_1415497056>
+
+            <!-- Image Component 4 -->
+            <image_215551113
+                jcr:created="{Date}2025-01-31T14:36:56.555+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-01-31T14:42:49.508+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="core/wcm/components/image/v2/image"
+                fileReference="/content/dam/bank-spa-react/hassaan-here-O8s_2_pEISg-unsplash.jpg"
+                imageFromPageImage="false">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="4"/>
+                </cq:responsive>
+            </image_215551113>
+
+            <!-- Text Component -->
+            <text
+                jcr:created="{Date}2025-02-01T09:00:01.599+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-02-01T09:00:23.110+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="core/wcm/components/text/v2/text"
+                text="&lt;p>updatedU&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+
+            <!-- Navigation Component -->
+            <navigation
+                jcr:created="{Date}2025-02-01T08:46:44.004+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-02-01T08:59:34.304+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="core/wcm/components/navigation/v1/navigation"
+                collectAllPages="true"
+                disableShadowing="false"
+                navigationRoot="/content/bank-spa-react/us/en"
+                structureStart="1"/>
+
+            <!-- Experience Fragment Footer -->
             <experiencefragment-footer
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bank-spa-react/components/experiencefragment"
-                        fragmentVariationPath="/content/experience-fragments/bank-spa-react/us/en/site/footer/master"/>
-            
-
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="core/wcm/components/experiencefragment/v1/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/bank-spa-react/us/en/site/footer/master"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
