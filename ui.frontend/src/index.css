@@ -3,6 +3,8 @@
   --color-light: #ffe8cc;
   --color-medium: #ffa94d;
   --color-dark: #ff922b;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
 
 * {
@@ -23,6 +25,36 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-lightest),
+    var(--color-light)
+  );
+  animation: bg-pulse 10s infinite alternate;
+}
+
+@keyframes bg-pulse {
+  0% {
+    background: linear-gradient(
+      135deg,
+      var(--color-lightest),
+      var(--color-light)
+    );
+  }
+  50% {
+    background: linear-gradient(
+      135deg,
+      var(--color-light),
+      var(--color-lightest)
+    );
+  }
+  100% {
+    background: linear-gradient(
+      135deg,
+      var(--color-lightest),
+      var(--color-light)
+    );
+  }
 }
 
 .app {
@@ -31,6 +63,16 @@ body {
   grid-template-columns: 34rem 44rem;
   column-gap: 4rem;
   align-items: start;
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px var(--color-shadow);
+  transition: var(--transition);
+}
+
+.app:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .button {
@@ -41,11 +83,35 @@ body {
   border-radius: 7px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: var(--transition);
+}
+
+.button:hover::before {
+  left: 100%;
 }
 
 .button:hover {
   background-color: var(--color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px var(--color-shadow);
 }
 
 .sidebar ul {
@@ -62,21 +128,33 @@ body {
   grid-template-columns: 4.8rem 1fr auto;
   align-items: center;
   column-gap: 1.6rem;
-
   padding: 1.2rem;
   border-radius: 7px;
-  transition: 0.5s;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-.selected,
 .sidebar li:hover {
   background-color: var(--color-lightest);
+  transform: translateX(5px);
+  box-shadow: 0 5px 10px var(--color-shadow);
+}
+
+.selected {
+  background-color: var(--color-lightest);
+  transform: translateX(5px);
+  box-shadow: 0 5px 10px var(--color-shadow);
 }
 
 .sidebar li img {
   border-radius: 50%;
   width: 100%;
   grid-row: span 2;
+  transition: var(--transition);
+}
+
+.sidebar li:hover img {
+  transform: scale(1.1);
 }
 
 .sidebar li h3 {
@@ -112,19 +190,25 @@ form {
   display: grid;
   align-items: center;
   gap: 1.2rem;
-
   background-color: var(--color-lightest);
   border-radius: 7px;
+  padding: 2rem;
+  box-shadow: 0 5px 10px var(--color-shadow);
+  transition: var(--transition);
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .form-add-friend {
   grid-template-columns: 1fr 1.5fr;
   margin-bottom: 1.6rem;
-  padding: 1.2rem;
 }
+
 .form-split-bill {
   grid-template-columns: 1fr 12rem;
-  padding: 3.2rem 4rem;
 }
 
 label {
@@ -146,13 +230,14 @@ select {
   text-align: center;
   border: 1px solid var(--color-light);
   border-radius: 4px;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
 input:focus,
 select:focus {
   outline: none;
   border: 1px solid var(--color-dark);
+  box-shadow: 0 0 10px rgba(255, 146, 43, 0.3);
 }
 
 form .button {
@@ -166,4 +251,52 @@ form h2 {
   text-transform: uppercase;
   letter-spacing: -0.5px;
   margin-bottom: 1.6rem;
+  color: var(--color-dark);
+  text-shadow: 1px 1px 2px var(--color-shadow);
+}
+
+/* Floating Animation for Selected Items */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.selected {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .sidebar li {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .sidebar li img {
+    grid-row: 1;
+    grid-column: 1;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar li h3,
+  .sidebar li p {
+    grid-column: 1;
+  }
+
+  .sidebar li .button {
+    grid-row: 3;
+    grid-column: 1;
+  }
 }
