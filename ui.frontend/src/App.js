@@ -31,9 +31,10 @@ const App = (props) => {
         <div className="sidebar">
           {/* Render FriendsList component */}
           <FriendsList />
+          <AddFriendForm />
         </div>
+        <FormSplitBill />
       </div>
-
       {/* Render child components and pages */}
       {props.childComponents}
       {props.childPages}
@@ -52,6 +53,11 @@ const FriendsList = () => {
   );
 };
 
+//use button
+function Button({ children }) {
+  return <button className='button'>{children}</button>
+}
+
 // Functional component for each individual Friend
 const Friend = ({ friend }) => {
   return (
@@ -68,11 +74,44 @@ const Friend = ({ friend }) => {
         {friend.balance === 0 && <p >
           you and {friend.name} are even ;
         </p>}
-        <button className='button'>Settle up</button>
+        <Button>Settle</Button>
       </li>
     </div>
   );
 };
+
+//form add friend
+function AddFriendForm() {
+  return (
+    <form className='form-add-friend'>
+      <label>👫 Name</label>
+      <input type="text" placeholder='Enter name' />
+      <label>🖼️ Image url</label>
+      <input type="text" />
+      <Button>Add</Button>
+    </form>
+  );
+}
+
+function FormSplitBill() {
+  return (
+    <form className='form-split-bill'>
+      <h2>Split bill x</h2>
+      <label>💰  bill amount</label>
+      <input type="text" />
+      <label>🕴️ your expences</label>
+      <input type="text" />
+      <label>x s expences</label>
+      <input type="text" disabled />
+      <label >💸 who paybill</label>
+      <select>
+        <option value="user">you</option>
+        <option value="friend">friend</option>
+      </select>
+      <Button>Split</Button>
+    </form>
+  )
+}
 
 // Export the App component wrapped with `withModel` to get the model data
 export default withModel(App);
