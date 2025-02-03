@@ -30,17 +30,27 @@ function Button({ children, onClick }) {
 
 // Functional component for the App
 const App = (props) => {
+  const [friends, setFriends] = useState(initialFriends);
   const [showfriends, setShowFriends] = useState(false);
+
+
+
   function handelShowFriend() {
     setShowFriends((show) => !show);
   }
+
+  function handleAddFriend(friend) {
+    setFriends((friends) => [...friends, friend]);
+    setShowFriends(false);
+  }
+
   return (
     <div>
       <div className="app">
         <div className="sidebar">
           {/* Render FriendsList component */}
-          <FriendsList />
-          {showfriends && < AddFriendForm />}
+          <FriendsList friends={friends} />
+          {showfriends && < AddFriendForm onAddfriend={handleAddFriend} />}
           <Button onClick={handelShowFriend}>{showfriends ? 'Close' : "ADD FRIEND"}</Button>
         </div>
 
@@ -54,10 +64,10 @@ const App = (props) => {
 };
 
 // Functional component for the FriendsList
-const FriendsList = () => {
+const FriendsList = ({ friends }) => {
   return (
     <ul>
-      {initialFriends.map((friend) => (
+      {friends.map((friend) => (
         <Friend friend={friend} key={friend.id} />
       ))}
     </ul>
@@ -89,19 +99,36 @@ const Friend = ({ friend }) => {
 };
 
 //form add friend
-function AddFriendForm() {
+function AddFriendForm({ onAddfriend }) {
+  const [name, setName]
+    = useState("");
+  const [image, setImage]
+    = useState("https://i.pravatar.cc/48");
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!name || !image) return;
+    const id = crypto.getRandomValues(new Uint32Array(1))[0];
+    const newFriend = {
+      id,
+      image: `${image}?=${id}`,
+      name,
+      balance: 0,
+    }
+    onAddfriend(newFriend);
+    setName("");
+    setImage("https://i.pravatar.cc/48");
+  }
+
   return (
     <>
-      <form className='form-add-friend'>
+      <form className='form-add-friend' onSubmit={handleSubmit}>
         <label>👫 Name</label>
-        <input type="text" placeholder='Enter name' />
+        <input type="text" placeholder='Enter name' value={name} onChange={(e) => setName(e.target.value)} />
         <label>🖼️ Image url</label>
-        <input type="text" />
+        <input type="text" value={image} onChange={(e) => setImage(e.target.value)} />
         <Button>Add</Button>
       </form>
-
     </>
-
   );
 }
 
