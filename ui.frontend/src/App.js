@@ -1,5 +1,5 @@
 import { withModel } from '@adobe/aem-react-editable-components';
-import React from 'react';
+import React, { useState } from 'react';
 
 // Initial data for friends
 const initialFriends = [
@@ -23,16 +23,27 @@ const initialFriends = [
   },
 ];
 
+//use button
+function Button({ children, onClick }) {
+  return <button className='button' onClick={onClick}>{children}</button>
+}
+
 // Functional component for the App
 const App = (props) => {
+  const [showfriends, setShowFriends] = useState(false);
+  function handelShowFriend() {
+    setShowFriends((show) => !show);
+  }
   return (
     <div>
       <div className="app">
         <div className="sidebar">
           {/* Render FriendsList component */}
           <FriendsList />
-          <AddFriendForm />
+          {showfriends && < AddFriendForm />}
+          <Button onClick={handelShowFriend}>{showfriends ? 'Close' : "ADD FRIEND"}</Button>
         </div>
+
         <FormSplitBill />
       </div>
       {/* Render child components and pages */}
@@ -53,10 +64,7 @@ const FriendsList = () => {
   );
 };
 
-//use button
-function Button({ children }) {
-  return <button className='button'>{children}</button>
-}
+
 
 // Functional component for each individual Friend
 const Friend = ({ friend }) => {
@@ -83,13 +91,17 @@ const Friend = ({ friend }) => {
 //form add friend
 function AddFriendForm() {
   return (
-    <form className='form-add-friend'>
-      <label>👫 Name</label>
-      <input type="text" placeholder='Enter name' />
-      <label>🖼️ Image url</label>
-      <input type="text" />
-      <Button>Add</Button>
-    </form>
+    <>
+      <form className='form-add-friend'>
+        <label>👫 Name</label>
+        <input type="text" placeholder='Enter name' />
+        <label>🖼️ Image url</label>
+        <input type="text" />
+        <Button>Add</Button>
+      </form>
+
+    </>
+
   );
 }
 
