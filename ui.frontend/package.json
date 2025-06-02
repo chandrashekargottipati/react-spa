@@ -7,6 +7,7 @@
     "build": "react-scripts build && clientlib --verbose",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build:netlify": "react-scripts build",
     "sync": "aemsync -d -w ../ui.apps/src/main/content"
   },
   "dependencies": {
