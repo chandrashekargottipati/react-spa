@@ -10,7 +10,7 @@ export default class Header extends Component {
                               <header className="Header">
                                         <div className="Header-container">
                                                   <Link to="/content/bank-spa-react/us/en/home.html">
-                                                            <h1>WKND</h1>
+                                                            <h1>Bank</h1>
                                                   </Link>
                                         </div>
                               </header>

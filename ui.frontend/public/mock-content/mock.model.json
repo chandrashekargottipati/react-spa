@@ -602,7 +602,7 @@
               ":items": {
                 "text": {
                   "id": "text-bc2ece1b7a",
-                  "text": "<p>Hello world  welocme to react course</p>\r\n",
+                  "text": "<p>Hello   welocme to react course</p>\r\n",
                   "richText": true,
                   ":type": "bank-spa-react/components/text",
                   "dataLayer": {

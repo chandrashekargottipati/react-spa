@@ -92,4 +92,4 @@ const TextEditConfig = {
     }
 };
 
-export default MapTo('bank-spa-react/components/text')(LazyTextComponent, TextEditConfig);
+export default MapTo('bank-spa-react/components/text')(LazyTextComponent, TextEditConfig);// eslint-disable-next-line
